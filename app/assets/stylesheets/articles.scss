@@ -1,3 +1,44 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.article, .show_article{
+	background-color: rgba(33, 189, 255, 0.08);
+	width: 400px;
+	height-max: 300px;
+	padding:5px 10px 0 10px;
+	margin-bottom:5px;
+	box-shadow: 2px 2px 5px rgba(136, 136, 136, 0.39)
+}
+.show_article{
+	margin:20px;
+}
+.article:hover{
+	background-color: rgba(33, 189, 255, .2);
+}
+.article .title{
+	border-bottom: thin solid lightgray;
+}
+.article .article_text{
+	width:90%;
+	max-height: 100px;
+	overflow: hidden;
+	padding:10px 0 10px 0;
+}
+.a_action{
+	display: inline-block;
+	margin-right: 10px;
+
+}
+.a_action a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size:12px;
+}
+a:hover{
+	background-color:lightgray;
+}
+strong{
+	font-weight:400;
+}
+
+.create_article{
+	margin-bottom:10px;
+
+}

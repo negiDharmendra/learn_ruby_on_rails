@@ -1,44 +1,44 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="show_article">
+  <div class="title"><strong style="color:lightgray">Title: </strong><%= @article.title %>
+    <strong style="color:lightgray"> <%= @article.created_at.localtime.to_s.slice(0, 19) %> </strong></div>
+  <div class="show_article_text"><strong style="color:lightgray">Content:</strong></br><%= @article.text %></div>
+
+  <div class="article_action">
+    <div class="a_action"><%= link_to 'Edit', edit_article_path(@article) %> |
+      <%= link_to 'Back', articles_path %></div>
+
+  </div>
+</div>
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <p>
-  <%= link_to 'Delete', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+    <p>
+      <%= link_to 'Delete', [comment.article, comment],
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'} %>
+    </p>
 <% end %>
- 
+
 <h2>Add a comment:</h2>
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+    <p>
+      <%= f.label :commenter %><br>
+      <%= f.text_field :commenter %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
 <% end %>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

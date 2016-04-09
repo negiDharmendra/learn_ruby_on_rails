@@ -1,24 +1,24 @@
 <h1>Listing articles</h1>
 <% if @articles.size >0 %>
- <%= link_to 'New article', new_article_path %>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-    </tr>
-    
+ <div class="create_article">
+  <%= link_to 'Create Article', new_article_path %>
+  </div>
+  <div class="articles">
+
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %> </td>
-        <td><%= link_to 'Edit', edit_article_path(article) %> </td>
-        <td><%= link_to 'Remove', article_path(article),
+      <div class="article">
+        <div class="title"><strong style="color:lightgray">Title: </strong><%= article.title %> <strong style="color:lightgray"> <%= article.created_at.localtime.to_s.slice(0,19) %> </strong></div>
+        <div class="article_text"><strong style="color:lightgray">Content:</strong></br><%= article.text %></div>
+        <div class="article_action">
+          <div class="a_action"><%= link_to 'more', article_path(article) %></div>
+          <div class="a_action"><%= link_to 'Edit', edit_article_path(article) %></div>
+          <div class="a_action"><%= link_to 'Remove', article_path(article),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+                data: { confirm: 'Are you sure?' } %></div>
+        </div>
+         </div>
     <% end %>
-  </table>
+  </div>
 <% else %>
 <h4> It seems that you haven't written any article yet</br>
 Click <%= link_to 'HERE', new_article_path %> to create your first article</h4>
