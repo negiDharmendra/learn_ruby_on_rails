@@ -16,12 +16,16 @@
 /*$font-stack:    Helvetica, sans-serif
 $primary-color: #333
 */
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+}
 .container{
 	background-color: rgba(148, 233, 255, 0.3);
-	width: 80%;
-	min-height: 720px;
-	margin: auto;
+	width: 70%;
+	min-height: 780px;
+	margin: -8px auto;
 	font-family: Helvetica,sans-serif;
+
 }
 .header{
 	text-align: center;
