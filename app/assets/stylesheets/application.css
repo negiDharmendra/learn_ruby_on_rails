@@ -13,26 +13,26 @@
  *= require_tree .
  *= require_self
  */
-/*$font-stack:    Helvetica, sans-serif
-$primary-color: #333
-*/
-body {
+
+
+body{
   font-family: verdana, arial, helvetica, sans-serif;
 }
-.container{
-	background-color: rgba(148, 233, 255, 0.3);
-	width: 70%;
-	min-height: 780px;
-	margin: -8px auto;
-	font-family: Helvetica,sans-serif;
 
+.container{
+  background-color: rgba(148, 233, 255, 0.3);
+  width: 70%;
+  min-height: 780px;
+  margin: -8px auto;
+  font-family: Helvetica, sans-serif;
 }
 .header{
-	text-align: center;
-	font-size: 60px;
-	border-bottom: 4px solid lightgray;
-}
+  text-align: center;
+  font-size: 60px;
+  border-bottom: 4px solid lightgray;
+  }
+
 .mainContent{
-	margin: 0 0 0 20%;
-	
+  margin: 0 0 0 0;
+
 }
