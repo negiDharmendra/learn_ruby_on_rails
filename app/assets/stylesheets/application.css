@@ -15,6 +15,7 @@
  */
 
 
+
 body{
   font-family: verdana, arial, helvetica, sans-serif;
 }
@@ -34,5 +35,13 @@ body{
 
 .mainContent{
   margin: 0 0 0 0;
+}
 
+.top_nav{
+    padding-top: 10px;
+}
+.top_nav a{
+    background-color: inherit;
+    border-radius: 8px;
+    text-decoration: none;
 }

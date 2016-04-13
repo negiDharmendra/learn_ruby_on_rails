@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412084520) do
+ActiveRecord::Schema.define(version: 20160413035921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at", null: false
@@ -41,5 +41,5 @@ ActiveRecord::Schema.define(version: 20160412084520) do
     t.string   "password_digest"
   end
 
-  add_foreign_key "comments", "articles"
+  add_foreign_key "comments", "blogs", column: "article_id"
 end

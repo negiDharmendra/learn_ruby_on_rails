@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
   def create
-    @article = Article.find(params[:article_id])
-    @article.comments.create(params.require(:comment).permit(:commenter, :body))
-    redirect_to article_path(@article)
+    @blog = Blog.find(params[:article_id])
+    @blog.comments.create(params.require(:comment).permit(:commenter, :body))
+    redirect_to article_path(@blog)
   end
 
   def destroy
-    @article  = Article.find(params[:article_id])
-    @comment = @article.comments.find(params[:id])
+    @blog  = Blog.find(params[:article_id])
+    @comment = @blog.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article)
+    redirect_to article_path(@blog)
 
   end
 end

@@ -29,7 +29,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: bloggingapp_development
+  database: blogDb
   pool: 5
   username: dharmenn
   password: Th0ughtW0rks_dharam
@@ -37,7 +37,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: bloggingapp_test
+  database: blogDb_test
   pool: 5
   username: dharmenn
   password: Th0ughtW0rks_dharam
@@ -45,7 +45,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: bloggingapp_production
+  database: blogDb
   pool: 5
   username: dharmenn
   password: Th0ughtW0rks_dharam
