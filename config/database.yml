@@ -32,7 +32,7 @@ development:
   database: blogDb
   pool: 5
   username: dharmenn
-  password: Th0ughtW0rks_dharam
+  password: ''
 
 test:
   adapter: postgresql
@@ -40,7 +40,7 @@ test:
   database: blogDb_test
   pool: 5
   username: dharmenn
-  password: Th0ughtW0rks_dharam
+  password: ''
 
 production:
   adapter: postgresql
@@ -48,4 +48,4 @@ production:
   database: blogDb
   pool: 5
   username: dharmenn
-  password: Th0ughtW0rks_dharam
+  password: ''
