@@ -22,9 +22,14 @@ describe 'User' do
         expect(@user.valid?).to eq(false)
     end
 
-    it 'email with more than 30 character should not valid' do
-        @user.name = ('a' * 31)+ '@gmail.com'
-        expect(@user.valid?).to eq(false)
+    it 'email with up to 100 character should be valid' do
+        @user.email = ('a' * 90)+ '@gmail.com'
+        expect(@user.valid?).to eq(true),"email #{@user.email} hah #{@user.email.length} character"
+    end
+
+    it 'email with more than 100 character should not valid' do
+        @user.email = ('a' * 91)+ '@gmail.com'
+        expect(@user.valid?).to eq(false), "email #{@user.email} hah #{@user.email.length} character"
     end
 
     it 'email validation should not validate the invalid email' do

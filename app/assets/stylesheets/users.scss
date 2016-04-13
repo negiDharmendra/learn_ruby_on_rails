@@ -1,13 +1,26 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.user_details {
+.user_details{
   width: 40%;
-  margin: 20px auto;
+  margin: 10px auto;
+}
+
+.signup_form {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(223, 249, 255);
+  box-shadow: 1px 1px 10px #888888;
+  padding: 10px 10px 30px 10px;
 }
 
 .login_form {
   position: relative;
+  margin-left: 35%;
+}
+
+.form_title{
+  margin-left: 30%;
 }
 
 .login_actions {
@@ -16,27 +29,19 @@
   transform: translate(-50%, -50%);
 }
 
-.login_actions button {
-  width: 100px;
-  height: 30px;
-  margin-right: 20px;
-  margin-top: 20px;
+.form_button{
+  width: 40%;
   font-size: 20px;
   border-radius: 5px;
-  background-color: #eeeeee;
+  background-color: #DFF9FF;
 }
 
-.register {
-  margin-right: 20px;
-  margin-top: 40px;
-  margin-left: 68%;
-
-}
-img{
+img {
   width: 600px;
   height: 600px;
-  padding:0 10% 0 5%;
+  padding: 0 10% 0 5%;
 }
-section.left{
+
+section.left {
   float: left;
 }
