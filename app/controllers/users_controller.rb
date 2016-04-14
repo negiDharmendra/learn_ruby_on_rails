@@ -1,7 +1,23 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+    def index
+        if logged_in?
+            redirect_to '/'
+        else
+            flash[:danger] = 'You are not logged in. Try to log in first'
+            redirect_to '/login'
+        end
+    end
+
+
     def show
+        if logged_in?
+            render 'show'
+        else
+            flash[:danger] = 'You are not logged in. Try to log in first'
+            redirect_to '/login'
+        end
     end
 
     def new
@@ -23,14 +39,11 @@ class UsersController < ApplicationController
     end
 
     def update
-        respond_to do |format|
-            if @user.update(user_params)
-                format.html { redirect_to @user, notice: 'User was successfully updated.' }
-                format.json { render :show, status: :ok, location: @user }
-            else
-                format.html { render :edit }
-                format.json { render json: @user.errors, status: :unprocessable_entity }
-            end
+        if @user.update(user_params)
+            flash[:notice] = 'User was successfully updated.'
+            redirect_to @user
+        else
+            render :edit
         end
     end
 
@@ -43,18 +56,13 @@ class UsersController < ApplicationController
     end
 
     private
-    def verify_password?
-        @user.password!=@user.password_confirmation
-    end
-
-    private
     def set_user
         @user = User.find_by_id(params[:id])
     end
 
     private
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
 end

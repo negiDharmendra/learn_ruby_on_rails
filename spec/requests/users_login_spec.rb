@@ -26,6 +26,5 @@ RSpec.describe 'UsersLogins', type: :request do
         expect(response).to render_template('sessions/new')
         post '/login', session: {email: 'john@gmail.com', password: 'password'}
         expect(response).to have_http_status(302)
-        user.destroy
     end
 end
