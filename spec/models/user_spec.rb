@@ -51,7 +51,7 @@ describe 'User' do
     it 'email should be uniq for each user' do
         duplicate_user = @user.dup
         @user.save
-        expect(duplicate_user.valid?).to eq(false)
+        expect(duplicate_user.save).to eq(false)
     end
 
     it 'email validation should handle case-insensitive problem' do

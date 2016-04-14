@@ -1,7 +1,6 @@
 <div class="user_login_form">
   <h2 class='form_title'>Login to our site</h2>
   <%= form_for(:session, url: login_path, html: {:class => 'login_form'}) do |f| %>
-
       <div class="field">
         <%= f.label :email %><br>
         <%= f.text_field :email, :class => 'user_details' %>
@@ -13,6 +12,6 @@
       <div class="field">
         <button class="form_button" type="submit" value="Login">Login</button>
       </div>
-
+      <%= flash[:danger] %>
   <% end %>
 </div>

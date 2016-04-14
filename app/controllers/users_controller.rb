@@ -13,16 +13,12 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-
-        respond_to do |format|
-            if verify_password?
-                format.html { redirect_to :new_user}
-            elsif @user.save
-                UserMailer.sample_email(@user).deliver_now
-                format.html { redirect_to @user, notice: 'User was successfully created.' }
-            else
-                format.html { render :new }
-            end
+        if @user.save
+            log_in @user
+            UserMailer.sample_email(@user).deliver_now
+            redirect_to @user
+        else
+            render 'new'
         end
     end
 
