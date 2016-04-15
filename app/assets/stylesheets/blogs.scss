@@ -1,11 +1,13 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.create_blog{
+.create_blog,.edit_blog{
   margin: 0 0 0 15%;
 }
 
-.create_blog textarea{
-  width: 60%;
-  height: 300px;
+.create_blog,.edit_blog {
+  textarea{
+    width: 60%;
+    height: 300px;
+  }
 }

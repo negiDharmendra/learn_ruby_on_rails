@@ -10,9 +10,20 @@
   <div class="user_blog">
     <% @user.blogs.each do |blog| %>
         <div class="blog">
-          <div class="title"><strong style="color:lightgray">Title: </strong><%= blog.title.to_s.capitalize %>
-            <strong style="color:lightgray"> <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong></div>
-          <div class="blog_content"><strong style="color:lightgray">Content:</strong><%= blog.content %></div>
+          <div class="title"><strong style="color:#663F3F;">Title: </strong><%= blog.title.to_s.capitalize %>
+            <strong style="color:#663F3F;"> Created at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+          </div>
+          <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= blog.content %></div>
+          <div class="blog_action">
+            <div class="a_action"><%= link_to 'more', user_blog_path(@user, blog), method: :get %></div>
+            <div class="a_action"><%= link_to 'edit', edit_user_blog_path(@user, blog) %></div>
+            <div class="a_action"><%= link_to 'remove', user_blog_path(@user, blog),
+                                              method: :delete,
+                                              data: {confirm: 'Are you sure?'} %></div>
+            <% if (blog.updated_at.to_i > blog.created_at.to_i) %>
+                <strong style="color:#663F3F;"> Updated at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+            <% end %>
+          </div>
         </div>
     <% end %>
   </div>

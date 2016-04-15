@@ -1,2 +1,13 @@
-<h1>Welcome</h1>
-
+<div class="user_blog">
+  <% @blogs.each do |blog| %>
+      <div class="blog">
+        <div class="title"><strong style="color:#663F3F;">Title: </strong><%= blog.title.to_s.capitalize %>
+          <strong style="color:#663F3F;"> Created at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+        </div>
+        <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= blog.content %></div>
+        <div class="blog_action">
+          <div class="a_action"><%= link_to 'more', blog_path(blog), method: :get %></div>
+        </div>
+      </div>
+  <% end %>
+</div>
