@@ -1,26 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.user_details{
+.user_details {
   width: 40%;
-  margin: 10px auto;
-}
-
-.signup_form {
-  width: 50%;
-  margin: auto;
-  background-color: rgb(223, 249, 255);
-  box-shadow: 1px 1px 10px #888888;
-  padding: 10px 10px 30px 10px;
+  margin: 20px auto;
 }
 
 .login_form {
   position: relative;
-  margin-left: 35%;
-}
-
-.form_title{
-  margin-left: 30%;
 }
 
 .login_actions {
@@ -29,27 +16,82 @@
   transform: translate(-50%, -50%);
 }
 
-.form_button{
-  width: 40%;
+.login_actions button {
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 20px;
   font-size: 20px;
   border-radius: 5px;
-  background-color: #DFF9FF;
+  background-color: #eeeeee;
 }
 
-img {
-  width: 600px;
-  height: 600px;
-  padding: 0 10% 0 5%;
+.register {
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-left: 68%;
+
 }
 
-section.left {
+section.side_bar {
   float: left;
+  width: 25%;
+  height: 600px;
+}
+.user_name,.create_new_blog,.my_blogs{
+  text-align: center;
+}
+.create_new_blog,.my_blogs{
+  background-color: #DFF9FF;
+  box-shadow: 2px 2px 5px rgba(136, 136, 136, 0.39)
+}
+section.blogs_section{
+  float: left;
+  margin-left: 5%;
+  height: 580px;
+  overflow: scroll;
 }
 
-#error_explanation {
-  width: 344px;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  //background-color: #f0f0f0;
+//=======================================================
+
+ .blog{
+  //background-color: rgba(33, 189, 255, 0.08);
+  width: 600px;
+  padding:5px 10px 0 10px;
+  margin-bottom:5px;
+  //box-shadow: 2px 2px 5px rgba(136, 136, 136, 0.39)
+}
+
+.blog:hover{
+  background-color: white;
+}
+.blog .title{
+  border-bottom: thin solid lightgray;
+}
+.blog .blog_content{
+  width:90%;
+  min-height: 100px;
+  overflow: hidden;
+  line-height: 25px;
+  padding:30px 0 10px 0;
+}
+
+.blog{
+  padding-bottom: 20px;
+}
+.a_action{
+  display: inline-block;
+  margin-right: 10px;
+
+}
+.a_action a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:12px;
+}
+a:hover{
+  background-color:lightgray;
+}
+strong{
+  font-weight:400;
 }

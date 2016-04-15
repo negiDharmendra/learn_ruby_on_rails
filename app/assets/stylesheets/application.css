@@ -22,6 +22,7 @@ body {
     background-color: rgba(148, 233, 255, 0.3);
     width: 70%;
     min-height: 780px;
+    max-height: 1000px;
     margin: -8px auto;
     font-family: Helvetica, sans-serif;
 }
@@ -36,6 +37,7 @@ body {
 
 .mainContent {
     margin: auto;
+    height: inherit;
 }
 
 .top_nav {

@@ -1,11 +1,10 @@
+<%= provide(title: @current_user.name) %>
 <p id="notice"><%= notice %></p>
 <section class="side_bar">
-  <div class='user_name'>
-    <%= @user.name.capitalize %>
-  </div>
   <div class="create_new_blog">
-    <%= link_to 'create new blog', new_user_blog_path(@user)%>
+    <%= link_to 'Create blog', new_user_blog_path(@user) %>
   </div>
+
 </section>
 <section class='blogs_section'>
   <div class="user_blog">
@@ -13,10 +12,7 @@
         <div class="blog">
           <div class="title"><strong style="color:lightgray">Title: </strong><%= blog.title.to_s.capitalize %>
             <strong style="color:lightgray"> <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong></div>
-          <div class="blog_text"><strong style="color:lightgray">Content:</strong><%= blog.content %></div>
-          <div class="blog_action">
-
-          </div>
+          <div class="blog_content"><strong style="color:lightgray">Content:</strong><%= blog.content %></div>
         </div>
     <% end %>
   </div>

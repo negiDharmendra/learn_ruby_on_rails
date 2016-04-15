@@ -24,6 +24,9 @@
         <div class="logout">
           <%= link_to 'Logout', logout_path, method: :delete %>
         </div>
+        <div class="user_name">
+          <%= link_to @current_user.name, @current_user %>
+        </div>
     <% end %>
   </div>
   <div class="separator"></div>

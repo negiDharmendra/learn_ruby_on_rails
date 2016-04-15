@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users do
       resources :blogs
     end
+
     get 'welcome/index'
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'
