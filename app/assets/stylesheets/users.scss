@@ -23,7 +23,8 @@
   margin-top: 20px;
   font-size: 20px;
   border-radius: 5px;
-  background-color: #eeeeee;
+  background-color: rgba(58, 58, 58, 0.1);
+  box-shadow: 1px 1px 5px rgb(251, 248, 244);
 }
 
 .register {
@@ -38,14 +39,27 @@ section.side_bar {
   width: 25%;
   height: 600px;
 }
-.user_name,.create_new_blog,.my_blogs{
+
+.create_new_blog {
+  border-radius: 8px;
+  text-decoration: none;
+  margin: auto;
+  height: 25px;
   text-align: center;
+  font-size: 20px;
 }
-.create_new_blog,.my_blogs{
-  background-color: #DFF9FF;
-  box-shadow: 2px 2px 5px rgba(136, 136, 136, 0.39)
+
+.create_new_blog a {
+  padding-right: 10px;
+  padding-left: 10px;
 }
-section.blogs_section{
+
+.create_new_blog:hover {
+  background-color: rgba(58, 58, 58, 0.1);
+  box-shadow: 1px 1px 10px rgb(251, 248, 244);
+}
+
+section.blogs_section {
   float: left;
   margin-left: 5%;
   height: 580px;
@@ -54,44 +68,46 @@ section.blogs_section{
 
 //=======================================================
 
- .blog{
+.blog {
   //background-color: rgba(33, 189, 255, 0.08);
   width: 600px;
-  padding:5px 10px 0 10px;
-  margin-bottom:5px;
+  padding: 5px 10px 0 10px;
+  margin-bottom: 5px;
   //box-shadow: 2px 2px 5px rgba(136, 136, 136, 0.39)
 }
 
-.blog:hover{
-  background-color: white;
+.blog:hover {
+  background-color: rgba(58, 58, 58, 0.1);
 }
-.blog .title{
+
+.blog .title {
   border-bottom: thin solid lightgray;
 }
-.blog .blog_content{
-  width:90%;
+
+.blog .blog_content {
+  width: 90%;
   min-height: 100px;
   overflow: hidden;
   line-height: 25px;
-  padding:30px 0 10px 0;
+  padding: 30px 0 10px 0;
 }
 
-.blog{
+.blog {
   padding-bottom: 20px;
 }
-.a_action{
+
+.a_action {
   display: inline-block;
   margin-right: 10px;
 
 }
-.a_action a{
+
+.a_action a {
   text-decoration: none;
   text-transform: uppercase;
-  font-size:12px;
+  font-size: 12px;
 }
-a:hover{
-  background-color:lightgray;
-}
-strong{
-  font-weight:400;
+
+strong {
+  font-weight: 400;
 }

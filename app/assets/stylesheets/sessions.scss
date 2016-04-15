@@ -1,4 +1,4 @@
-.user_details{
+.user_details {
   width: 40%;
   margin: 10px auto;
 }
@@ -6,8 +6,8 @@
 .user_login_form {
   width: 50%;
   margin: auto;
-  background-color: rgb(223, 249, 255);
-  box-shadow: 1px 1px 10px #888888;
+  background-color: rgba(58, 58, 58, 0.1);
+  box-shadow: 1px 1px 5px rgb(251, 248, 244);
   padding: 10px 10px 30px 10px;
 }
 
@@ -16,7 +16,7 @@
   margin-left: 35%;
 }
 
-.form_title{
+.form_title {
   margin-left: 30%;
 }
 
@@ -26,9 +26,9 @@
   transform: translate(-50%, -50%);
 }
 
-.form_button{
+.form_button {
   width: 40%;
   font-size: 20px;
   border-radius: 5px;
-  background-color: #DFF9FF;
+  background-color: rgba(58, 58, 58, 0.1);
 }
