@@ -79,3 +79,13 @@ a {
 .debug_dump {
   margin: 40%;
 }
+
+textarea,input{
+
+    font-size: 14px;
+    line-height: 20px;
+    word-spacing: 5px;
+}
+input{
+    text-transform: capitalize;
+}

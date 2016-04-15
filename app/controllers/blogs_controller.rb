@@ -2,23 +2,27 @@ class BlogsController < ApplicationController
   attr_accessor :id
 
   def new
-    get_blog
+    # require 'pry'; binding.pry
+    @user = User.find_by_id(params[:user_id])
+    @blog = @user.blogs.new
+    render 'new'
   end
 
   def create
+    # require 'pry'; binding.pry
     @user = User.find_by_id(params[:user_id])
-    blog_params
+    @blog = @user.blogs.create(blog_params)
     redirect_to user_path(@user)
   end
 
   def show
-    # require 'pry'; binding.pry
     get_blog
+    # require 'pry'; binding.pry
     render 'show'
   end
 
   def show_for_all
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     @blog = Blog.find_by_id(params[:id])
     render 'show'
   end
@@ -49,6 +53,7 @@ class BlogsController < ApplicationController
 
   private
   def get_blog
+    # require 'pry'; binding.pry
     if logged_in?
       @user = User.find_by_id(params[:user_id])
       @blog = @user.blogs.find_by_id(params[:id])
