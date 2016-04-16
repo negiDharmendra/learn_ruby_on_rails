@@ -31,7 +31,7 @@ development:
   encoding: unicode
   database: blogDb
   pool: 5
-  username: dharmenn
+  username: <%= ENV['USER'] %>
   password: ''
 
 test:
@@ -39,7 +39,7 @@ test:
   encoding: unicode
   database: blogDb_test
   pool: 5
-  username: dharmenn
+  username:  <%= ENV['USER'] %>
   password: ''
 
 production:
@@ -47,5 +47,5 @@ production:
   encoding: unicode
   database: blogDb
   pool: 5
-  username: dharmenn
+  username: <%= ENV['USER'] %>
   password: ''
