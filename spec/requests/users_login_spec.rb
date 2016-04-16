@@ -23,6 +23,7 @@ RSpec.describe 'UsersLogins', type: :request do
 
   it 'flash message regarding danger should not present for successful login' do
     user = FactoryGirl.create(:user)
+    get edit_account_activation_path(user.activation_token,email: user.email)
     delete '/logout'
     expect(response).to redirect_to('/')
     get '/login'
@@ -35,6 +36,7 @@ RSpec.describe 'UsersLogins', type: :request do
 
   it 'login with remember_me option' do
     user = FactoryGirl.create(:user)
+    get edit_account_activation_path(user.activation_token,email: user.email)
     get '/login'
     post '/login', session: {email: user.email, password: user.password, remember_me: 1}
     expect(cookies['remember_token'].nil?).to eq(false)

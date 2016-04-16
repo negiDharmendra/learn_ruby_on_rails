@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
     resources :users
-    resources :blogs
+    resources :blogs,only: [:show]
     resources :users do
       resources :blogs
     end
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
     get 'signup' => 'users#new'
+    resources :account_activations, only: [:edit]
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".
 

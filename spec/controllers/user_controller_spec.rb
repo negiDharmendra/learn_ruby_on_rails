@@ -10,6 +10,6 @@ RSpec.describe UsersController, type: :request do
         user = FactoryGirl.create(:user)
         post '/login', session:{email: 'john_1@gmail.com',password: 'password'}
         get '/users'
-        expect(response).to redirect_to('/')
+        expect(response).to redirect_to('/login')
     end
 end

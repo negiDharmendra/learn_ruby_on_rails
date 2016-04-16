@@ -30,10 +30,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      UserMailer.sample_email(@user).deliver_now
-      redirect_to @user
+      @user.update_attribute(:activated, false)
+      UserMailer.account_activation(@user).deliver_now
+      flash[:success_message] = 'Your account is created successfully'
+      flash[:activation_message] = 'Please check your mail to activate your account'
+      redirect_to '/'
     else
+      flash[:warning] = 'Something went wrong please try again with same data or new one'
       render 'new'
     end
   end
