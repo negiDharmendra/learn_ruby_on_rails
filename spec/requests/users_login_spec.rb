@@ -31,7 +31,6 @@ RSpec.describe 'UsersLogins', type: :request do
     expect(flash.empty?).to eq(true)
     expect(response.body.include? 'Invalid email/password combination').to eq(false)
     expect(response).to have_http_status(302)
-
   end
 
   it 'login with remember_me option' do

@@ -10,6 +10,10 @@
         <%= f.password_field :password, :class => 'user_details' %>
       </div>
       <div class="field">
+        <%= f.check_box :remember_me  %>
+        <%= f.label 'Remember me on this computer' %><br>
+      </div>
+      <div class="field">
         <button class="form_button" type="submit" value="Login">Login</button>
       </div>
       <%= flash[:danger] %>
