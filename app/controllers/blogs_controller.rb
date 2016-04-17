@@ -16,14 +16,8 @@ class BlogsController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
     get_blog
-    # require 'pry'; binding.pry
-    render 'show'
-  end
-
-  def show_for_all
-    # require 'pry'; binding.pry
-    @blog = Blog.find_by_id(params[:id])
     render 'show'
   end
 
@@ -54,7 +48,7 @@ class BlogsController < ApplicationController
   private
   def get_blog
     # require 'pry'; binding.pry
-    if logged_in?
+    if logged_in? && !params[:user_id].nil?
       @user = User.find_by_id(params[:user_id])
       @blog = @user.blogs.find_by_id(params[:id])
     else
