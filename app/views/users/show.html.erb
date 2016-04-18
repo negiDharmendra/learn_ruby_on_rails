@@ -17,6 +17,7 @@
           <div class="blog_action">
             <div class="a_action"><%= link_to 'more', user_blog_path(@user, blog), method: :get %></div>
             <div class="a_action"><%= link_to 'edit', edit_user_blog_path(@user, blog) %></div>
+            <div class="a_action"><%= link_to 'history', user_blog_versions_path(@user, blog)%></div>
             <div class="a_action"><%= link_to 'remove', user_blog_path(@user, blog),
                                               method: :delete,
                                               data: {confirm: 'Are you sure?'} %></div>
