@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   resources :users do
     resources :blogs
     resources :blogs, only: [:show] do

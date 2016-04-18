@@ -5,8 +5,7 @@ class UsersController < ApplicationController
     if logged_in?
       redirect_to '/'
     else
-      flash[:danger] = 'You are not logged in. Try to log in first'
-      redirect_to '/login'
+      check_status
     end
   end
 
@@ -15,8 +14,7 @@ class UsersController < ApplicationController
     if logged_in?
       render 'show'
     else
-      flash[:danger] = 'You are not logged in. Try to log in first'
-      redirect_to '/login'
+      check_status
     end
   end
 
@@ -65,4 +63,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
+  private
+  def check_status
+    flash[:danger] = 'You are not logged in. Try to log in first'
+    redirect_to '/login'
+  end
 end
