@@ -1,5 +1,6 @@
 <%= provide(title: @current_user.name) %>
 <p id="notice"><%= notice %></p>
+<%= flash[:success_message] %>
 <section class="side_bar">
   <div class="create_new_blog">
     <%= link_to 'Create blog', new_user_blog_path(@user) %>

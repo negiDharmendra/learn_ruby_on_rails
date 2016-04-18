@@ -13,7 +13,7 @@ RSpec.describe 'User Signup', type: :request do
     expect(flash[:warning].nil?).to eq(false)
     expect(response).to render_template('users/new')
     expect(response).to have_http_status(200)
-    user.destroy
+    delete "/users/#{user.id}"
   end
   it 'success and activation message should be there for valid signup' do
     get '/signup'
@@ -64,5 +64,6 @@ RSpec.describe 'User Signup', type: :request do
     p flash.inspect
     expect(response).to redirect_to("http://www.example.com/users/#{user.id}")
     expect(is_logged_in?).to eq(true)
+
   end
 end

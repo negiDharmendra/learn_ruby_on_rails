@@ -1,0 +1,20 @@
+
+<div class="Reset password">
+  <h1 class='form_title'>Signup for our site</h1>
+  <%= form_for(:reset_password,url: edit_reset_passwords_path) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, :class => 'user_details',:required => true, :type => 'hidden' ,:value => @user.email%>
+      </div>
+      <div class="field">
+        <%= f.label :new_password %><br>
+        <%= f.password_field :password, :class => 'user_details',:required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :new_password_confirmation %><br>
+        <%= f.password_field :new_password_confirmation, :class => 'user_details',:required => true %>
+      </div>
+      <div class="field">
+        <button class='form_button'> Sign Up</button>
+      </div>
+  <% end %>
+</div>

@@ -16,6 +16,7 @@
       </div>
       <div class="field">
         <button class="form_button" type="submit" value="Login">Login</button>
+        <%= link_to 'Forgot password', new_reset_passwords_path%>
       </div>
       <%= flash[:danger] %>
   <% end %>

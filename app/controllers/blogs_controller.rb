@@ -27,6 +27,7 @@ class BlogsController < ApplicationController
   end
 
   def update
+    require 'pry'; binding.pry
     get_blog
     @blog.update blog_params
     redirect_to user_path (@user)
