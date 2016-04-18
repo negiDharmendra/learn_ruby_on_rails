@@ -1,7 +1,13 @@
 class VersionsController < ApplicationController
 
   def index
+
     get_version
+    if (@blog.versions.count == 0)
+      flash[:notice] = 'No copy has been created yet'
+      redirect_to @user
+    end
+  else
     @version = Version.where(params[:blog_id])
   end
 
