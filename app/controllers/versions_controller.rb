@@ -8,7 +8,7 @@ class VersionsController < ApplicationController
       redirect_to @user
     end
   else
-    @version = Version.where(params[:blog_id])
+    @version = Version.where(blog_id: params[:blog_id])
   end
 
   def show
