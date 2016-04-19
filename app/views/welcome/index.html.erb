@@ -1,6 +1,14 @@
-<%= flash[:success_message] %>
-<%= flash[:activation_message] %>
-<%= flash[:danger] %>
+<% if (!flash[:success_message].nil? || !flash[:activation_message].nil?) %>
+  <div class="message">
+    <%= flash[:success_message] %>
+    <%= flash[:activation_message] %>
+  </div>
+<% end %>
+<% if !flash[:danger].nil? %>
+  <div class="warning">
+    <%= flash[:danger] %>
+  </div>
+<% end %>
 <div class="user_blog">
   <% @blogs.each do |blog| %>
       <div class="blog">

@@ -1,4 +1,8 @@
-<%= flash[:success_message] %>
+<% if !flash[:success_message].nil? || !flash[:activation_message].nil? %>
+  <div class="message">
+    <%= flash[:success_message] %>
+  </div>
+<% end %>
 <div class="user_login_form">
   <h2 class='form_title'>Login to our site</h2>
   <%= form_for(:session, url: login_path, html: {:class => 'login_form'}) do |f| %>

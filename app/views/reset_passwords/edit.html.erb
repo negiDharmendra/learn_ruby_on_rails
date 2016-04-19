@@ -1,6 +1,6 @@
 
-<div class="Reset password">
-  <h1 class='form_title'>Signup for our site</h1>
+<div class="reset_password">
+  <h1 class='reset_form_title'>Reset password</h1>
   <%= form_for(:reset_password,url: edit_reset_passwords_path) do |f| %>
       <div class="field">
         <%= f.email_field :email, :class => 'user_details',:required => true, :type => 'hidden' ,:value => @user.email%>

@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160418092133) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160418092133) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "blogs", ["user_id", "created_at"], name: "index_blogs_on_user_id_and_created_at", using: :btree
   add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
