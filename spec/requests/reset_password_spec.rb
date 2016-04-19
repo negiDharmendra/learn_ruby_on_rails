@@ -20,7 +20,6 @@ RSpec.describe 'Reset password', type: :request do
     expect(response).to render_template('sessions/new')
     post '/login', session: {email: user.email, password: '12345678'}
     expect(response).to redirect_to("http://www.example.com/users/#{user.id}")
-    delete "/users/#{user.id}"
   end
   it 'should not work for invalid reset token' do
     user = FactoryGirl.create(:user, :activated)
@@ -33,6 +32,5 @@ RSpec.describe 'Reset password', type: :request do
     expect(response).to have_http_status(302)
     expect(response).not_to have_http_status(200)
     expect(response).to redirect_to("http://www.example.com/login")
-    delete "/users/#{user.id}"
   end
 end

@@ -29,7 +29,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blogDb
+  database: blogDb_development
   pool: 5
   username: <%= ENV['USER'] %>
   password: ''
@@ -45,7 +45,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: blogDb
+  database: blogDb_production
   pool: 5
   username: <%= ENV['USER'] %>
   password: ''

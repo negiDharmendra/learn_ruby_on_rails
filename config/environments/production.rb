@@ -87,4 +87,6 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto: true
   }
+  host = 'fierce-reef-43234.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https'}
 end
