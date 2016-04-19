@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<section class='blogs_section'>
+  <div class="user_blog">
+    <% @blog.versions.each do |version| %>
+        <div class="blog">
+          <div class="title"><strong style="color:#663F3F;">Title: </strong><%= version.title.to_s.capitalize %>
+            <strong style="color:#663F3F;"> Created at: <%= version.created_at.localtime.to_s.slice(0, 19) %> </strong>
+          </div>
+          <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= version.content %></div>
+          <h3>  <%= link_to 'Go Back', :back %> </h3>
+        </div>
+    <% end %>
+  </div>
+</section>

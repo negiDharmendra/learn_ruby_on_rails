@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :blogs, only: [:show]
   resources :users do
     resources :blogs
+    resources :blogs, only: [:show] do
+      resources :versions
+    end
   end
   get 'welcome/index'
   get 'login' => 'sessions#new'
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'welcome#index'
 
 # Example of regular route:
