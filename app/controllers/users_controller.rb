@@ -28,7 +28,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      Rails.logger.debugger("Going to activate");
       @user.update_attribute(:activated, false)
       UserMailer.account_activation(@user).deliver_now
       flash[:success_message] = 'Your account is created successfully'
