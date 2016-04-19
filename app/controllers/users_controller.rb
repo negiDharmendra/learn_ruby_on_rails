@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     if @user.update(user_params)
       flash[:notice] = 'User was successfully updated.'
       redirect_to @user

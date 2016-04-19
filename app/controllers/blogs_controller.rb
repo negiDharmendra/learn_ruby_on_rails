@@ -27,9 +27,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    require 'pry'; binding.pry
     get_blog
-    require 'pry'; binding.pry
     @blog.versions.create(@blog.attributes.slice('title', 'content'))
     @blog.update blog_params
     redirect_to user_path (@user)
