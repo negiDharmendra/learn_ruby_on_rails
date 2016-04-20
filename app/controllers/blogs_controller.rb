@@ -28,6 +28,7 @@ class BlogsController < ApplicationController
 
   def update
     get_blog
+    require 'pry'; binding.pry if ENV['RAILS_ENV'] =='development'
     @blog.versions.create(@blog.attributes.slice('title', 'content'))
     @blog.update blog_params
     redirect_to user_path (@user)
