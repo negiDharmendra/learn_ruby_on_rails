@@ -1,23 +1,17 @@
 require 'rails_helper'
-
 describe 'Blog' do
-    #
-    # test 'should be valid' do
-    #     expect(@blog.valid?).to eq(true)
-    # end
-    # # #
-    # test "user id should be present" do
-    #   @micropost.user_id = nil
-    #   assert_not @micropost.valid?
-    # end
-    #
-    # test "content should be present" do
-    #   @micropost.content = "   "
-    #   assert_not @micropost.valid?
-    # end
-    #
-    # test "content should be at most 140 characters" do
-    #   @micropost.content = "a" * 141
-    #   assert_not @micropost.valid?
-    # end
+ it 'should be valid' do
+    blog = FactoryGirl.build(:blog)
+    expect(blog.valid?).to eq(true)
+ end
+ it 'should not valid without title' do
+    blog = FactoryGirl.build(:blog)
+    blog.title = ''
+    expect(blog.valid?).to eq(false)
+ end
+ it 'should not valid without content' do
+    blog = FactoryGirl.build(:blog)
+    blog.content = ''   
+    expect(blog.valid?).to eq(false)
+ end
 end
