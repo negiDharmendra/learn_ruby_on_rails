@@ -2,17 +2,21 @@ class BlogsController < ApplicationController
   attr_accessor :id
 
   def new
-    
+
     @user = User.find_by_id(params[:user_id])
     @blog = @user.blogs.new
     render 'new'
   end
 
   def create
-    
     @user = User.find_by_id(params[:user_id])
-    @blog = @user.blogs.create(blog_params)
-    redirect_to user_path(@user)
+    @blog = @user.blogs.new(blog_params)
+    if @blog.save
+      redirect_to user_path(@user)
+    else
+      flash[:warning] = 'Something went wrong please try again'
+      render 'new'
+    end
   end
 
   def show
