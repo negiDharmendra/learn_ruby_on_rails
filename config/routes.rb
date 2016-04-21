@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :blogs, only: [:show]
   resources :users do
     resources :blogs
-    resources :blogs, only: [:show] do
+    resources :blogs do
       resources :versions, only: [:index, :show]
     end
   end

@@ -7,8 +7,14 @@
             <strong style="color:#663F3F;"> Created at: <%= version.created_at.localtime.to_s.slice(0, 19) %> </strong>
           </div>
           <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= version.content %></div>
-          <h3>  <%= link_to 'Go Back', :back %> </h3>
+          <div class="blog_action">
+            <div class="a_action"><%= link_to 'more', user_blog_version_path(@user,@blog, version), method: :get %></div>
+            <div class="a_action"><%= link_to 'remove', user_blog_path(@user,@blog, version),
+                                              method: :delete,
+                                              data: {confirm: 'Are you sure?'} %></div>
+          </div>
         </div>
     <% end %>
+    <h3>  <%= link_to 'Go Back', @user %> </h3>
   </div>
 </section>

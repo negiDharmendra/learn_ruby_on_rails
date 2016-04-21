@@ -6,9 +6,10 @@ class VersionsController < ApplicationController
     if (@blog.versions.count == 0)
       flash[:notice] = 'No copy has been created yet'
       redirect_to @user
+    else
+      @version = Version.where(blog_id: params[:blog_id])
     end
-  else
-    @version = Version.where(blog_id: params[:blog_id])
+
   end
 
   def show
