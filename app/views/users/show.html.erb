@@ -25,10 +25,10 @@
           </div>
           <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= blog.content %></div>
           <div class="blog_action">
-            <div class="a_action"><%= link_to 'more', user_blog_path(@user, blog), method: :get %></div>
-            <div class="a_action"><%= link_to 'edit', edit_user_blog_path(@user, blog) %></div>
+            <div class="a_action"><strong style="font-size:25px"><%= link_to '...', user_blog_path(@user, blog), method: :get %></strong></div>
+            <div class="a_action"><strong style="font-size:25px"><%= link_to '✍', edit_user_blog_path(@user, blog) %></strong></div>
             <div class="a_action"><%= link_to 'history', user_blog_versions_path(@user, blog)%></div>
-            <div class="a_action"><%= link_to 'remove', user_blog_path(@user, blog),
+            <div class="a_action"><%= link_to 'Remove', user_blog_path(@user, blog),
                                               method: :delete,
                                               data: {confirm: 'Are you sure?'} %></div>
             <% if (blog.updated_at.to_i > blog.created_at.to_i) %>
