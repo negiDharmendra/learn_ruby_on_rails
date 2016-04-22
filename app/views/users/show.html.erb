@@ -20,15 +20,17 @@
   <div class="user_blog">
     <% @user.blogs.each do |blog| %>
         <div class="blog">
-          <div class="title"><strong style="color:#663F3F;">Title: </strong><%= blog.title.to_s.capitalize %>
-            <strong style="color:#663F3F;"> Created at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+          <div class="title">
+            <strong style="font-size:20px"><%= blog.title.to_s.capitalize %></strong>
+            <strong style="color:#663F3F;float: right; padding-top: 2%"> Created
+              at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
           </div>
-          <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= blog.content %></div>
+          <div class="blog_content"><%= blog.content %></div>
           <div class="blog_action">
-            <div class="a_action"><strong style="font-size:25px"><%= link_to '...', user_blog_path(@user, blog), method: :get %></strong></div>
-            <div class="a_action"><strong style="font-size:25px"><%= link_to '✍', edit_user_blog_path(@user, blog) %></strong></div>
+            <div class="a_action"><strong style="font-size:25px"><%= link_to '<span data-toggle="tooltip" data-placement="bottom" title="Read more">...</span>'.html_safe, user_blog_path(@user, blog), method: :get %></strong></div>
+            <div class="a_action"><strong style=""><%= link_to '<span class = "glyphicon glyphicon-edit" data-toggle="tooltip" data-placement="bottom" title="Edit"></span>'.html_safe, edit_user_blog_path(@user, blog) %></strong></div>
             <div class="a_action"><%= link_to 'history', user_blog_versions_path(@user, blog)%></div>
-            <div class="a_action"><%= link_to 'Remove', user_blog_path(@user, blog),
+            <div class="a_action"><%= link_to '<span class = "glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="bottom" title="Remove"></span>'.html_safe, user_blog_path(@user, blog),
                                               method: :delete,
                                               data: {confirm: 'Are you sure?'} %></div>
             <% if (blog.updated_at.to_i > blog.created_at.to_i) %>

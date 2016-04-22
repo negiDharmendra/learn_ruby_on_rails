@@ -1,7 +1,7 @@
 class VersionsController < ApplicationController
 
   def index
-    require 'pry';binding.pry
+    # require 'pry';binding.pry
     get_version
     if (@blog.versions.count == 0)
       flash[:notice] = 'No copy has been created yet'

@@ -1,22 +1,24 @@
 <% if (!flash[:success_message].nil? || !flash[:activation_message].nil?) %>
-  <div class="message">
-    <%= flash[:success_message] %>
-    <%= flash[:activation_message] %>
-  </div>
+    <div class="message">
+      <%= flash[:success_message] %>
+      <%= flash[:activation_message] %>
+    </div>
 <% end %>
 <% if !flash[:danger].nil? %>
-  <div class="warning">
-    <%= flash[:danger] %>
-  </div>
+    <div class="warning">
+      <%= flash[:danger] %>
+    </div>
 <% end %>
 
 <div class="user_blog">
   <% @blogs.each do |blog| %>
       <div class="blog">
-        <div class="title"><strong style="color:#663F3F;">Title: </strong><%= blog.title.to_s.capitalize %>
-          <strong style="color:#663F3F;"> Created at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+        <div class="title">
+          <strong style="font-size:20px"><%= blog.title.to_s.capitalize %></strong>
+          <strong style="color:#663F3F;float: right; padding-top: 2%"> Created
+            at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
         </div>
-        <div class="blog_content"><strong style="color:#663F3F;">Content:</strong><%= blog.content %></div>
+        <div class="blog_content"><%= blog.content %></div>
         <div class="blog_action">
           <div class="a_action"><%= link_to 'More', blog_path(blog), method: :get %></div>
         </div>

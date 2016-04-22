@@ -1,38 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.user_details {
-  width: 40%;
-  margin: 20px auto;
-}
 
-.login_form {
-  position: relative;
-}
-
-.login_actions {
-  position: absolute;
-  left: 74%;
-  transform: translate(-50%, -50%);
-}
-
-.login_actions button {
-  width: 100px;
-  height: 30px;
-  margin-right: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: rgba(58, 58, 58, 0.1);
-  box-shadow: 1px 1px 5px rgb(251, 248, 244);
-}
-
-.register {
-  margin-right: 20px;
-  margin-top: 40px;
-  margin-left: 68%;
-
-}
 
 section.side_bar {
   float: left;
@@ -61,24 +30,26 @@ section.side_bar {
 
 section.blogs_section {
   float: left;
-  height: 580px;
-
+  width: 85%;
+  height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 //=======================================================
 
-.user_blog{
+.user_blog {
   width: 100%;
   height: inherit;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.blog {
-  background-color: rgba(58, 58, 58, 0.1);
-  width: 550px;
-  padding: 5px 8px 0 10px;
-  margin-bottom: 5px;
 
+}
+
+.blog {
+  background-color: rgba(17, 22, 22, 0.17);
+  width: 800px;
+  padding: 5px 8px 0 10px;
+  margin-bottom: 2%;
+  border-radius: 10px;
 }
 
 .blog:hover {
@@ -86,7 +57,9 @@ section.blogs_section {
 }
 
 .blog .title {
-  border-bottom: thin solid lightgray;
+
+  padding: 1% 2% 1% 2%;
+  border-bottom: thin solid ;
 }
 
 .blog_content {
@@ -94,20 +67,12 @@ section.blogs_section {
   max-height: 70px;
   overflow: hidden;
   line-height: 25px;
-  padding: 30px 0 2px 0;
-}
-
-.blog {
-  padding-bottom: 20px;
+  padding: 2% 2% 10% 2%;
 }
 
 .a_action {
   display: inline-block;
   margin-right: 10px;
   text-transform: capitalize;
-}
-
-
-strong {
-  font-weight: 400;
+  padding: 2% 2% 1% 2%;
 }
