@@ -22,7 +22,7 @@ RSpec.describe VersionsController, type: :controller do
   describe 'GET#show' do
     it 'shows a specific version of a blog' do
       get :show, {user_id: version.blog.user_id, blog_id: version.blog_id, id: version.to_param}
-      expect(assigns(:version)).to eq(version)
+      expect(assigns(:version)).to eq(Version.first)
     end
   end
 

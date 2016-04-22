@@ -4,5 +4,4 @@ FactoryGirl.define do
     content "Convention over Configurations"
     user { FactoryGirl.build(:user) }
   end
-
 end
