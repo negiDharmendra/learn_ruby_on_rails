@@ -2,14 +2,13 @@
 <html>
 <head>
   <title>Blogging App</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/asset/stylesheet/custom.css">
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+<body id="main">
 
 <div class="navbar navbar-inverse">
   <div class='container-fluid'>
@@ -40,5 +39,13 @@
 <div class="mainContent">
   <%= yield %>
 </div>
+<script language="javascript">
+  function autoResizeDiv()
+  {
+    document.getElementById('main').style.height = window.innerHeight +'px';
+  }
+  window.onresize = autoResizeDiv;
+  autoResizeDiv();
+</script>
 </body>
 </html>

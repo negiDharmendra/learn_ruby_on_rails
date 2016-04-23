@@ -2,7 +2,7 @@
   a {
     font-size: 30px;
     font-family: Lucida Grande;
-    color: lightgray;
+    color: white;
   }
   a:hover {
     text-decoration: none;
@@ -11,16 +11,27 @@
 }
 
 .navbar {
-  box-shadow: 1px 1px 5px rgb(251, 248, 244);
+  box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+.navbar-inverse .navbar-nav > li {
+  a {
+    color: rgb(255, 255, 255);
+  }
+  a:hover {
+    color: gray;
+  }
+  .dropdown-menu>li>a{
+    color: black;
+  }
 }
 
 body {
-
-  height: 1000px;
-  background: -webkit-linear-gradient(left top, #FF7200, yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, #FF7200, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, #FF7200, yellow); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, #FF7200, yellow)
+  background-color: #69916F;
+  background: -webkit-linear-gradient(to bottom, #69916F, #9ed99f); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #69916F, #9ed99f); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #69916F, #9ed99f); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #69916F, #9ed99f)
 }
 
 //==========================
@@ -69,9 +80,10 @@ body {
   background-color: rgba(58, 58, 58, 0.1);
 }
 
-.user_blog{
+.user_blog {
   margin-left: 20%;
 }
+
 //====================================
 
 .message {
@@ -81,6 +93,7 @@ body {
   color: white;
   font-size: 20px;
 }
+
 .warning {
   width: auto;
   margin-left: 20%;
@@ -89,7 +102,12 @@ body {
   font-size: 20px;
 }
 
-pre{
+pre {
   background-color: inherit;
   border: none;
+}
+
+//============================
+.blogs_section::-webkit-scrollbar {
+  display: none;
 }

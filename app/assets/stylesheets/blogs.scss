@@ -17,9 +17,12 @@
   margin-left: 20%;
   background-color: inherit;
   line-height: 25px;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
   .full_blog_content {
     max-height: 800px;
-    //overflow-y: scroll;
+    overflow-y: scroll;
     overflow-x: hidden;
     white-space: pre;
   }

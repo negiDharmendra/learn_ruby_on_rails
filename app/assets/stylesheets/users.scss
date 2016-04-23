@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 section.side_bar {
   float: left;
   width: 15%;
@@ -41,15 +40,18 @@ section.blogs_section {
 .user_blog {
   width: 100%;
   height: inherit;
-
+  margin-top: 20px;
 }
 
 .blog {
-  background-color: rgba(17, 22, 22, 0.17);
+  //background-color: rgb(230, 213, 135);
   width: 800px;
   padding: 5px 8px 0 10px;
   margin-bottom: 2%;
   border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
 }
 
 .blog:hover {
@@ -59,7 +61,7 @@ section.blogs_section {
 .blog .title {
 
   padding: 1% 2% 1% 2%;
-  border-bottom: thin solid ;
+  border-bottom: thin solid;
 }
 
 .blog_content {
@@ -67,8 +69,8 @@ section.blogs_section {
   max-height: 70px;
   overflow: hidden;
   line-height: 25px;
-  padding: 2% 2% 10% 2%;
-  white-space: pre;
+  padding: 2% 2% 9.5% 2%;
+  font-size: 18px;
 }
 
 .a_action {
@@ -76,4 +78,8 @@ section.blogs_section {
   margin-right: 10px;
   text-transform: capitalize;
   padding: 2% 2% 1% 2%;
+  a {
+    font-size: 20px;
+    color: black;
+  }
 }

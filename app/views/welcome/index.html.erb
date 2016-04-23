@@ -9,19 +9,20 @@
       <%= flash[:danger] %>
     </div>
 <% end %>
-
-<div class="user_blog">
-  <% @blogs.each do |blog| %>
-      <div class="blog">
-        <div class="title">
-          <strong style="font-size:20px"><%= blog.title.to_s.capitalize %></strong>
-          <strong style="color:#663F3F;float: right; padding-top: 2%"> Created
-            at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+<section class='blogs_section'>
+  <div class="user_blog">
+    <% @blogs.each do |blog| %>
+        <div class="blog">
+          <div class="title">
+            <strong style="font-size:20px"><%= blog.title.to_s.capitalize %></strong>
+            <strong style="color:#663F3F;float: right; padding-top: 2%"> Created
+              at: <%= blog.created_at.localtime.to_s.slice(0, 19) %> </strong>
+          </div>
+          <div class="blog_content"><%= blog.content %></div>
+          <div class="blog_action">
+            <div class="a_action"><%= link_to '<span data-toggle="tooltip" data-placement="bottom" title="Read more" style="font-size:20px">...</span>'.html_safe, blog_path(blog), method: :get %></div>
+          </div>
         </div>
-        <div class="blog_content"><%= blog.content %></div>
-        <div class="blog_action">
-          <div class="a_action"><%= link_to 'More', blog_path(blog), method: :get %></div>
-        </div>
-      </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</section>
